@@ -1,9 +1,10 @@
 import { useState } from "react";
 import Link from "next/link";
-import { Icon } from "@iconify/react";
+import { adventureOptions } from "../utils/adventureOptions";
 import SearchBar from "./SearchBar";
 import NavbarItems from "./NavbarItems";
 import Carousel from "react-multi-carousel";
+import styles from "../styles/Navbar.module.css";
 
 const responsive = {
   superLargeDesktop: {
@@ -24,67 +25,18 @@ const responsive = {
   },
 };
 
-const icons = [
-  {
-    icon: <Icon icon="mdi:unidentified-flying-object" width="24" height="24" />,
-    text: "OMG!",
-  },
-  {
-    icon: <Icon icon="mdi:curtains" width="24" height="24" />,
-    text: "Amazing Views",
-  },
-  {
-    icon: <Icon icon="ph:house-line" width="24" height="24" />,
-    text: "Tiny homes",
-  },
-  {
-    icon: <Icon icon="game-icons:grand-piano" width="24" height="24" />,
-    text: "Grand pianos",
-  },
-  {
-    icon: <Icon icon="tabler:chart-grid-dots" width="24" height="24" />,
-    text: "Off-the-grid",
-  },
-  {
-    icon: <Icon icon="tabler:chart-grid-dots" width="24" height="24" />,
-    text: "Cabins",
-  },
-  {
-    icon: <Icon icon="ep:dish-dot" width="24" height="24" hFlip={true} />,
-    text: "Luxe",
-  },
-  {
-    icon: <Icon icon="mdi:ski" width="24" height="24" />,
-    text: "Ski-in/out",
-  },
-  {
-    icon: <Icon icon="icon-park-outline:double-bed" width="24" height="24" />,
-    text: "Private rooms",
-  },
-  {
-    icon: <Icon icon="carbon:palm-tree" width="24" height="24" />,
-    text: "Tropical",
-  },
-  {
-    icon: <Icon icon="game-icons:habitat-dome" width="24" height="24" />,
-    text: "Domes",
-  },
-];
-
-export default function Nabar({deviceType}) {
+export default function Nabar({ deviceType }) {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <div className="divide-y divide-slate-200">
+    <div className="sticky top-0 z-50 divide-y divide-slate-200">
       <nav className="w-full bg-white">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <Link href="/" legacyBehavior className="cursor-pointer">
-              <a>
-                <h2 className="text-2xl text-primary-red font-bold">
-                  Hotels&amp;Co
-                </h2>
-              </a>
+            <Link href="/" className="cursor-pointer">
+              <h2 className="text-2xl text-primary-red font-bold">
+                Hotels&amp;Co
+              </h2>
             </Link>
             <div className="md:hidden">
               <button
@@ -128,11 +80,10 @@ export default function Nabar({deviceType}) {
         </div>
       </nav>
 
-      <nav className="w-full bg-white">
+      <nav className="w-full bg-white shadwo">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <Carousel
-            className="mt-5"
-            itemClass="carousel-item-padding-40-px"
+            itemClass={styles.carouselItem}
             responsive={responsive}
             swipeable={false}
             draggable={false}
@@ -143,15 +94,18 @@ export default function Nabar({deviceType}) {
             keyBoardControl={true}
             customTransition="all .5"
             transitionDuration={500}
-            containerClass="carousel-container"
+            containerClass="mt-3 mb-3"
             removeArrowOnDeviceType={["tablet", "mobile"]}
             deviceType={deviceType}
           >
-            {icons.map(({ icon, text }, idx) => (
-              <div key={idx} className="grid justify-items-center gap-y-2">
+            {adventureOptions.map(({ icon, text }, idx) => (
+              <button
+                key={idx}
+                className="grid justify-items-center gap-y-2 hover:border-b-2 border-black mb-0"
+              >
                 {icon}
                 <p className="text-sm text-current">{text}</p>
-              </div>
+              </button>
             ))}
           </Carousel>
         </div>

@@ -9,7 +9,7 @@ export default function SearchBar() {
       <div className="flex items-center gap-x-3">
         <button className="text-gray-400 ml-2">Add guests</button>
         <div className={styles.searchIconContainer}>
-          <Icon icon="material-symbols:search" width="18" height="18"/>
+          <Icon icon="material-symbols:search" width="18" height="18" className="cursor-pointer"/>
         </div>
       </div>
     </div>

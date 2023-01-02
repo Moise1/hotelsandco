@@ -11,10 +11,11 @@ export default function NavbarItems({ navbar }) {
       >
         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
           <li className="text-black">
-            <Link href="/homes" legacyBehavior>
-              <a className="font-bold bg-white hover:rounded-full hover:bg-neutral-100 p-3">
-                Airbnb your home
-              </a>
+            <Link
+              href="/homes"
+              className="font-bold bg-white hover:rounded-full hover:bg-neutral-100 p-3"
+            >
+              Airbnb your home
             </Link>
           </li>
           <li className="text-black">
