@@ -3,8 +3,8 @@ import Link from "next/link";
 import { adventureOptions } from "../utils/adventureOptions";
 import SearchBar from "./SearchBar";
 import NavbarItems from "./NavbarItems";
-import Carousel from "react-multi-carousel";
-import styles from "../styles/Navbar.module.css";
+import CustomCarousel from "./CustomCarousel";
+import styles from "../styles/Carousel.module.css";
 
 const responsive = {
   superLargeDesktop: {
@@ -82,21 +82,11 @@ export default function Nabar({ deviceType }) {
 
       <nav className="w-full bg-white shadwo">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
-          <Carousel
+          <CustomCarousel
             itemClass={styles.carouselItem}
-            responsive={responsive}
-            swipeable={false}
-            draggable={false}
-            ssr={true} // means to render carousel on server-side.
-            infinite={false}
-            autoPlay={false}
-            autoPlaySpeed={1000}
-            keyBoardControl={true}
-            customTransition="all .5"
-            transitionDuration={500}
             containerClass="mt-3 mb-3"
-            removeArrowOnDeviceType={["tablet", "mobile"]}
             deviceType={deviceType}
+            responsive={responsive}
           >
             {adventureOptions.map(({ icon, text }, idx) => (
               <button
@@ -107,7 +97,7 @@ export default function Nabar({ deviceType }) {
                 <p className="text-sm text-current">{text}</p>
               </button>
             ))}
-          </Carousel>
+          </CustomCarousel>
         </div>
       </nav>
     </div>
