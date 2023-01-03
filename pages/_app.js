@@ -1,7 +1,11 @@
 import "../styles/globals.css";
-import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import {
+  QueryClientProvider,
+  QueryClient,
+  useIsFetching,
+} from "@tanstack/react-query";
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 
 export default function App({ Component, pageProps }) {
   return (

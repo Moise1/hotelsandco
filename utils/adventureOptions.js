@@ -34,7 +34,7 @@ export const adventureOptions = [
       text: "Ski-in/out",
     },
     {
-      icon: <Icon icon="icon-park-outline:double-bed" width="24" height="24" />,
+      icon: <Icon icon="icon-park-outline:double-bed" width="24" height="24"/>,
       text: "Private rooms",
     },
     {

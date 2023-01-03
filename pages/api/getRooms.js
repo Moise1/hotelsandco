@@ -11,7 +11,7 @@ export const getRooms = async () => {
 
 export const getRoomImgs = async () => {
   const { data } = await axios.get(
-    `https://api.unsplash.com/collections/1862377/photos?client_id=${unsplashAccessKey}&per_page=30`
+    `https://api.unsplash.com/collections/1862377?client_id=${unsplashAccessKey}&per_page=32`
   );
   return data;
 };

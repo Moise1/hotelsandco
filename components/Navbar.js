@@ -29,7 +29,7 @@ export default function Nabar({ deviceType }) {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <div className="sticky top-0 z-50 divide-y divide-slate-200">
+    <div className="sticky top-0 divide-y divide-slate-200">
       <nav className="w-full bg-white">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -80,18 +80,21 @@ export default function Nabar({ deviceType }) {
         </div>
       </nav>
 
-      <nav className="w-full bg-white shadwo">
+      <nav className="w-full bg-white shadow">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <CustomCarousel
             itemClass={styles.carouselItem}
             containerClass="mt-3 mb-3"
             deviceType={deviceType}
             responsive={responsive}
+            ssr
+            customTransition="all .5"
+            transitionDuration={500}
           >
             {adventureOptions.map(({ icon, text }, idx) => (
               <button
                 key={idx}
-                className="grid justify-items-center gap-y-2 hover:border-b-2 border-black mb-0"
+                className="grid justify-items-center gap-y-2 hover:border-b-2 border-gray-400 mb-0"
               >
                 {icon}
                 <p className="text-sm text-current">{text}</p>
