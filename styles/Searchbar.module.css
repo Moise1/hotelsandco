@@ -1,0 +1,11 @@
+.searchIconContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    background: #ff385c;
+}
