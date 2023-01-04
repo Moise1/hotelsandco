@@ -25,7 +25,7 @@ const responsive = {
   },
 };
 
-export default function Nabar({ deviceType }) {
+export default function Nabar() {
   const [navbar, setNavbar] = useState(false);
 
   return (
@@ -85,7 +85,7 @@ export default function Nabar({ deviceType }) {
           <CustomCarousel
             itemClass={styles.carouselItem}
             containerClass="mt-3 mb-3"
-            deviceType={deviceType}
+            deviceType="desktop"
             responsive={responsive}
             ssr
             customTransition="all .5"
