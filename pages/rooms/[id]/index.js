@@ -18,7 +18,7 @@ export default function RoomDetails() {
     previewPics.push(photosQuery.data?.preview_photos[i].urls.regular);
   }
   return (
-    <div className="px-40 pt-10 bg-white h-screen">
+    <div className="px-5 md:px-40 pt-10 bg-white h-screen">
       {status === "loading" ? (
         <RoomDetailsSkeleton />
       ) : (
@@ -26,7 +26,7 @@ export default function RoomDetails() {
           <p className="text-black font-bold font-large my-3">
             {data?.location}
           </p>
-          <div className="flex justify-between mb-3">
+          <div className="md:flex justify-between mb-3">
             <div className="description-container flex gap-x-2">
               <p className="text-black font-bold flex">
                 <Icon icon="material-symbols:star" className="mt-1" />
@@ -58,7 +58,7 @@ export default function RoomDetails() {
               </button>
             </div>
           </div>
-          <div className="grid gap-x-1 grid-cols-2">
+          <div className="w-full md:grid grid-cols-2 gap-x-1">
             <img src={previewPics[0]} alt="" className="rounded-lg" />
             <div className="grid gap-x-1 gap-y-1 grid-cols-2">
               <img src={previewPics[2]} alt="" className="rounded-lg" />

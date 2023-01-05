@@ -53,7 +53,7 @@ export function RoomDetailsSkeleton() {
     <Box>
       <SkeletonTheme baseColor="#e5e5e5">
         <Skeleton width={100} />
-        <div className="flex justify-between mb-3">
+        <div className="md:flex justify-between mb-3">
           <div className="description-container flex gap-x-2">
             <Skeleton width={100} />
           </div>
@@ -63,7 +63,7 @@ export function RoomDetailsSkeleton() {
             <Skeleton width={70}/>
           </div>
         </div>
-        <div className="grid gap-x-1 grid-cols-2">
+        <div className="w-full md:grid grid-cols-2 gap-x-1">
           <Skeleton width={600} height={410} />
           <div className="grid gap-x-1 gap-y-1 grid-cols-2">
             <Skeleton width={300} height={200} />
