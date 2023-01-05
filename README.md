@@ -25,6 +25,7 @@ As the team lead, after discussing with the product owner and the scrum master, 
         * CI/CD pipepline tools (Githhub Actions, TravisCI, Jenkins, etc.)
         * Git workflow (creating feature branches, descriptive pull requests, etc.)
         * Code reviews before merging pull requests.
+        * Responsiveness (for the UI)
 
 
     * The front-end team spends the rest of the sprint implementing the mockup designs, receiving and applying the feedback from the team lead and the product owner that was provided during the daily stand-up meetings.
@@ -33,7 +34,7 @@ As the team lead, after discussing with the product owner and the scrum master, 
 
     * Phase 1 (a 2-week sprint of the 2nd month)
 
-    * The scrum master and the team lead call the kick-off meeting with the teams discuss the next steps of the project, see if there’s any work for the back-end team based on what’s required on the front-end, and hear feedback or concerns from them.
+    * The scrum master and the team lead call the kick-off meeting with the teams discuss the next steps of the project, see if there’s any work for the back-end team based on what’s required  on the front-end but applicable to the back-end, and hear feedback or concerns from them.
 
     * If there’s any work for the back-end team, the front-end team pauses their work until the back-end has delivered the required features well-tested and fully functional according to the specified best practices.
 
