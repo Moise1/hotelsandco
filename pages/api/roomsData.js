@@ -15,3 +15,12 @@ export const getRoomImgs = async () => {
   );
   return data;
 };
+
+
+
+export const getRoomDetails = async (id) => {
+  const { data } = await axios.get(
+    `https://63b29d465901da0ab368e025.mockapi.io/api/v1/rooms/${id}`
+  );
+  return data;
+};

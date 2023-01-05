@@ -3,7 +3,7 @@ import { useQuery, useInfiniteQuery } from "@tanstack/react-query";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import moment from "moment";
-import { getRooms, getRoomImgs } from "../pages/api/getRooms";
+import { getRooms, getRoomImgs } from "../pages/api/roomsData";
 import InfiniteScroll from "react-infinite-scroll-component";
 import CustomCarousel from "./CustomCarousel";
 
@@ -26,9 +26,9 @@ const responsive = {
   },
 };
 
-const ROUTE_POST_ID = "/roomDetails/[id]";
+const ROUTE_POST_ID = "/rooms/[id]";
 
-export default function fetAllRooms() {
+export default function fetchAllRooms() {
   const { status, data, fetchNextPage, hasNextPage } = useInfiniteQuery(
     ["rooms"],
     getRooms,
@@ -61,7 +61,7 @@ export default function fetAllRooms() {
         hasMore={hasNextPage}
         loader={<h4 className="text-center text-black">Loading...</h4>}
       >
-        <div className="grid gap-x-8 gap-y-4 grid-cols-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-4">
           {data?.pages?.map((page, idx) => (
             <Fragment key={idx}>
               {page.map((room) => {
@@ -111,7 +111,7 @@ export default function fetAllRooms() {
                               pathname: ROUTE_POST_ID,
                               query: { id: room.id },
                             }}
-                            as={`/room-details/${room.id}`}
+                            as={`/rooms/${room.id}`}
                             passHref
                             legacyBehavior
                           >

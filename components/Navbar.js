@@ -25,14 +25,14 @@ const responsive = {
   },
 };
 
-export default function Nabar() {
+export function Navbar() {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <div className="sticky top-0 divide-y divide-slate-200">
-      <nav className="w-full bg-white">
+    <div className="divide-y divide-slate-200">
+      <nav className="w-full bg-white py-5 md:py-0">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
-          <div className="flex items-center justify-between py-3 md:py-5 md:block">
+          <div className="hidden md:block flex items-center justify-between py-3 md:py-5 md:block">
             <Link href="/" className="cursor-pointer">
               <h2 className="text-2xl text-primary-red font-bold">
                 Hotels&amp;Co
@@ -87,9 +87,9 @@ export default function Nabar() {
             containerClass="mt-3 mb-3"
             deviceType="desktop"
             responsive={responsive}
-            ssr
             customTransition="all .5"
             transitionDuration={500}
+            swipeable
           >
             {adventureOptions.map(({ icon, text }, idx) => (
               <button
@@ -104,5 +104,18 @@ export default function Nabar() {
         </div>
       </nav>
     </div>
+  );
+}
+
+export function LearnMoreUpfront() {
+  return (
+    <nav className="hidden md:block h-16 w-full bg-white border">
+      <div className="px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+        <p className="mx-auto mt-3">
+          Show total price upfront &nbsp;{" "}
+          <span className="cursor-pointer underline font-bold">Learn more</span>
+        </p>
+      </div>
+    </nav>
   );
 }

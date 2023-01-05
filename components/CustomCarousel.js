@@ -11,14 +11,13 @@ export default function CustomCarousel(props) {
     showDots,
     slidesToSlide,
     swipeable,
-    ssr,
     centerMode,
     rtl,
     infinite,
     additionalTransfrom,
     minimumTouchDrag,
     customTransition,
-    transitionDuration
+    transitionDuration,
   } = props;
   return (
     <Carousel
@@ -26,9 +25,7 @@ export default function CustomCarousel(props) {
       containerClass={containerClass}
       responsive={responsive}
       swipeable={swipeable}
-      draggable={false}
       withDots={withDots}
-      ssr={ssr} // means to render carousel on server-side.
       infinite={infinite}
       autoPlay={false}
       customTransition={customTransition}
