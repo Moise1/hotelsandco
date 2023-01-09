@@ -49,3 +49,9 @@ As the team lead, after discussing with the product owner and the scrum master, 
     * The front-end team spends the rest of the sprint working on the project and observing all the best practices provided by the team lead.
 
     * At the of the sprint, the front-end team have a final  demo of the working product for all the parties that were involved in the project from the start, more especially the product owner.
+    
+    ## Scripts
+    
+    - Run `yarn dev` to start the development server 
+    - Run `yarn test` to run tests
+    
