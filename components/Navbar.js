@@ -3,7 +3,7 @@ import Link from "next/link";
 import { adventureOptions } from "../utils/adventureOptions";
 import SearchBar from "./SearchBar";
 import NavbarItems from "./NavbarItems";
-import CustomCarousel from "./CustomCarousel";
+import {CustomCarousel} from "./CustomCarousel";
 import styles from "../styles/Carousel.module.css";
 
 const responsive = {
