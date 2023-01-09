@@ -1,6 +1,6 @@
 import Carousel from "react-multi-carousel";
 
-export default function CustomCarousel(props) {
+export const CustomCarousel = (props) =>{
   const {
     itemClass,
     containerClass,

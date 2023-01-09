@@ -1,12 +1,10 @@
 import Head from "next/head";
 import { Inter } from "@next/font/google";
-import fetchAllRooms from "../components/Rooms";
-import { RoomsSkeleton } from "../utils/CustomSkeletons";
+import { AllRoooms } from "../components/Rooms";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const { render, roomsStatus } = fetchAllRooms();
   return (
     <>
       <Head>
@@ -14,8 +12,8 @@ export default function Home() {
         <meta name="description" content="Hotels&Co" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <main className="p-24 bg-white h-auto relative">
-        {roomsStatus === "loading" ? <RoomsSkeleton /> : render}
+      <main className={`p-24 bg-white h-auto relative ${inter.className}`}>
+        <AllRoooms />
       </main>
     </>
   );

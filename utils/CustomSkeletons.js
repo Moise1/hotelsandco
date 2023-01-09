@@ -30,7 +30,7 @@ export function NavbarSkeleton() {
   );
 }
 
-export function RoomsSkeleton() {
+export const RoomsSkeleton = () => {
   return (
     <Box className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-4">
       <SkeletonTheme baseColor="#e5e5e5">
@@ -46,7 +46,7 @@ export function RoomsSkeleton() {
       </SkeletonTheme>
     </Box>
   );
-}
+};
 
 export function RoomDetailsSkeleton() {
   return (
@@ -59,8 +59,8 @@ export function RoomDetailsSkeleton() {
           </div>
 
           <div className="options-container flex gap-x-3">
-            <Skeleton width={70}/>
-            <Skeleton width={70}/>
+            <Skeleton width={70} />
+            <Skeleton width={70} />
           </div>
         </div>
         <div className="w-full md:grid grid-cols-2 gap-x-1">
