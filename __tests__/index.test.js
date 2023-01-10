@@ -1,17 +1,9 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { LearnMoreUpfront, Navbar } from "../components/Navbar";
-import { AllRooms } from "../components/Rooms";
+import {Rooms } from "../components/Rooms";
 import { renderwithComp } from "../utils/handler";
 
-const client = new QueryClient({
-  defaultOptions: {
-    queries: {
-      retry: false,
-    },
-  },
-});
 
 describe("Test Navbars", () => {
   it("renders texts on the upper navbar section", () => {
@@ -26,9 +18,10 @@ describe("Test Navbars", () => {
   });
 });
 
-describe("Fetch all rooms", () => {
+describe("Test room card",() => {
   it("Test rooms", async () => {
-    const result = renderwithComp(<AllRooms/>)
-    
+    renderwithComp(<Rooms />);
+    expect(screen.queryByRole('button')).toBeNull()
+    expect(screen.queryByRole('page')).toBeNull()
   });
 });

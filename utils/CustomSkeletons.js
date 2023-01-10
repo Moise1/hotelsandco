@@ -32,7 +32,7 @@ export function NavbarSkeleton() {
 
 export const RoomsSkeleton = () => {
   return (
-    <Box>
+    <Box className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-4">
       <SkeletonTheme baseColor="#e5e5e5">
         {Array.from("x".repeat(8)).map((item, idx) => (
           <Fragment key={idx}>

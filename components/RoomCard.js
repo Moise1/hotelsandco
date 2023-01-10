@@ -29,7 +29,7 @@ const formattedDate = (date) => {
 };
 export const RoomCard = ({ room, previewPics, routeRoomId }) => {
   return (
-    <div key={room.id}>
+    <div key={room?.id}>
       <CustomCarousel
         containerClass="mt-3 mb-3 container"
         deviceType="desktop"
@@ -61,9 +61,9 @@ export const RoomCard = ({ room, previewPics, routeRoomId }) => {
             <Link
               href={{
                 pathname: routeRoomId,
-                query: { id: room.id },
+                query: { id: room?.id },
               }}
-              as={`/rooms/${room.id}`}
+              as={`/rooms/${room?.id}`}
               passHref
               legacyBehavior
             >
@@ -79,20 +79,30 @@ export const RoomCard = ({ room, previewPics, routeRoomId }) => {
           </div>
         ))}
       </CustomCarousel>
-      <Link href="/room-details" className="flex justify-between mt-2">
-        <div>
-          <p className="font-bold">{room.location}</p>
-          <p className="font-bold">Room ID: {room.id}</p>
-          <p className="text-gray-400">Viewed {room.views} times last week</p>
-          <p className="text-gray-400">{formattedDate(room.viewDate)}</p>
-          <p>
-            <span className="font-bold">${room.price}</span> night
-          </p>
-        </div>
-        <div className="flex justify-center gap-x-1">
-          <Icon icon="material-symbols:star" />
-          <p>{room.stars}</p>
-        </div>
+      <Link
+        href={{
+          pathname: routeRoomId,
+          query: { id: room?.id },
+        }}
+        as={`/rooms/${room?.id}`}
+        passHref
+        legacyBehavior
+      >
+        <a className="flex justify-between mt-2">
+          <div>
+            <p className="font-bold">{room?.location}</p>
+            <p className="font-bold">Room ID: {room?.id}</p>
+            <p className="text-gray-400">Viewed {room?.views} times last week</p>
+            <p className="text-gray-400">{formattedDate(room?.viewDate)}</p>
+            <p>
+              <span className="font-bold">${room?.price}</span> night
+            </p>
+          </div>
+          <div className="flex justify-center gap-x-1">
+            <Icon icon="material-symbols:star" />
+            <p>{room?.stars}</p>
+          </div>
+        </a>
       </Link>
     </div>
   );
